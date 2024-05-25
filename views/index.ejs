@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        .wrapper{
+            height: 100vh;
+            width: 100vw;
+            background-color: rgb(45, 39, 39);
+            padding: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 200px;
+            
+        }
+        #container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+
+        }
+        #input{
+            height: 35px;
+            width: 500px;
+            border: none;
+            outline: none;
+            background-color: rgba(49, 47, 47, 0.811);
+            padding: 10px;
+            border-radius: 10px;
+            color: #fff;
+        }
+        a{
+            font-size: 20px;
+            margin: 10px;
+            color: #fff;
+            text-decoration: none;
+            /* border: 2px solid rgb(0, 0, 0); */
+            background-color: rgb(158, 105, 105);
+            padding: 5px;
+            border-radius: 5px;
+        }
+        #button{
+            color: #fff;
+            background-color: rgb(72, 66, 66);
+            outline: none;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+
+       
+        <form action="/create" method="post" id="container">
+            <input type="text" placeholder="enter Name" name="name" id="input">
+            <input type="text" placeholder="enter email" name="email" id="input">
+            <input type="text" placeholder="enter URL of a image" id="input" name="image">
+            <input type="submit" value="submit" id="button">
+        </form>
+        <a href="/allfile">see the all file</a>
+    </div>
+
+</body>
+</html>
