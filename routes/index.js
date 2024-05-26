@@ -19,7 +19,7 @@ app.post('/create',async function(req,res){
     let user = await userModel.create({
         name : req.body.name,
         email : req.body.email,
-        image : req.body.image
+        image : req.body.image,
     })
     res.redirect('/allfile')
 })
@@ -27,6 +27,11 @@ app.post('/create',async function(req,res){
 app.get('/allfile',async function(req, res){
     let allUsers = await userModel.find()
     res.render('allfile',{userdata : allUsers})
+})
+
+app.get('/delete/:id',async function(req,res){
+    await userModel.findOneAndDelete({_id : req.params.id})
+    res.redirect('/allfile')
 })
 
 

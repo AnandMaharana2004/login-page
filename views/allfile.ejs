@@ -76,6 +76,11 @@
             color: red;
             text-decoration: none;
         }
+        .nousers{
+            color: chartreuse;
+            margin-left: 41%;
+            margin-top: 20%;
+        }
     </style>
 </head>
 
@@ -87,25 +92,31 @@
         <a href="/">BACK TO HOME PAGE</a>
 
         <div class="container">
-            <% userdata.forEach(function(user){ %>
-                <div class="users">
+            <% if(userdata.length> 0){ %>
 
-                    <img src="<%= user.image %>" alt="image" id="image">
+                <% userdata.forEach(function(user){ %>
+                    <div class="users">
 
-                    <h2 id="texts">
-                        <%= user.name %>
-                    </h2>
-                    <h3 id="texts">
-                        <%= user.email %>
-                    </h3>
+                        <img src="<%= user.image %>" alt="image" id="image">
 
-                    <div class="editsection">
-                        <a href="/edit">edit</a>
-                        <a href="/delete">Delete file</a>
+                        <h2 id="texts">
+                            <%= user.name %>
+                        </h2>
+                        <h3 id="texts">
+                            <%= user.email %>
+                        </h3>
+
+                        <div class="editsection">
+                            <a href="/edit">edit</a>
+                            <a href="/delete/<%= user._id  %>">Delete file</a>
+                        </div>
+
                     </div>
+                    <% }) %>
 
-                </div>
-                <% }) %>
+            <% } else{ %>
+                <h1 class="nousers">NO USERS YET !! </h1>
+            <% } %>
 
 
         </div>
