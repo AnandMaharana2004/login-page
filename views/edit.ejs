@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit</title>
+    <style>
+        #Pform{
+            background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 10px;
+        }
+        #Nform{
+            background-color: darkgreen;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 20px;
+            gap: 20px;
+            padding: 10px;
+        }
+        input{
+            height: 30px;
+            background-color: black;
+            color: #fff;
+            width: 400px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
+        label{
+            font-size: 20px;
+            color: #fff;
+        }
+        #button{
+            color: white;
+            background-color: blueviolet;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrpper">
+        <form action="" id="Pform">
+            <label for="name">Privious Name : </label>
+            <input type="text" name="name" id="" placeholder="" value="<%= user.name %>">
+            <label for="email">Privious Email : </label>
+            <input type="text" name="newemail" id="" placeholder="enter the new email" value="<%= user.email %>">
+            <label for="image">Privious Image url : </label>
+            <input type="text" placeholder="" value="<%= user.image %>">
+
+        </form>
+
+        <form action="/edit/<%= user._id %>" id="Nform" method="post" >
+            <label for="name">New Name : </label>
+            <input type="text" name="name" id="" placeholder="enter the new name">
+            <label for="email">New Email : </label>
+            <input type="text" name="email" id="" placeholder="enter the new email">
+            <label for="image">New Image url : </label>
+            <input type="text" placeholder="enter the new image url" name="image">
+            <input type="submit" value="update" id="button">
+
+        </form>
+    </div>
+</body>
+</html>
